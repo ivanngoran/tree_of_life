@@ -1,0 +1,22 @@
+# Tree of Life Consulting — Netlify config
+# Static site: no build step, publish repo root as-is.
+[build]
+  publish = "."
+
+# Security headers on every page
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# HTML is revalidated every time (forms + content change often)
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Forms (contact, guide, booking) are plain static HTML with
+# data-netlify="true" — auto-detected at deploy, no extra config.
+# Success is handled in-page via ?ok=1 / ?guide=ok / ?booked=1.

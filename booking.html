@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Contact | Tree of Life Consulting, LLC</title>
+<title>Book a call | Tree of Life Consulting, LLC</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -185,7 +185,10 @@
   /* contact */
   .contact-grid{display:grid;grid-template-columns:1.1fr 0.9fr;gap:2.6rem;}
   .field{margin-bottom:1rem;} .field label{display:block;font-size:0.85rem;font-weight:600;color:var(--feldgrau);margin-bottom:0.35rem;}
-  .field input,.field textarea{width:100%;padding:0.85rem 1rem;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:0.98rem;background:#fff;}
+  .field input,.field select,.field textarea{width:100%;padding:0.85rem 1rem;border:1px solid var(--line);border-radius:12px;font-family:inherit;font-size:0.98rem;background:#fff;color:var(--ink);}
+  .frow{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+  .tz-note{font-size:0.85rem;color:var(--muted);margin-top:0.35rem;}
+  @media (max-width:600px){.frow{grid-template-columns:1fr;}}
   .field textarea{min-height:140px;resize:vertical;}
   .field input:focus-visible,.field textarea:focus-visible{outline:2px solid var(--pine);}
   .cdetail{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:1.8rem;}
@@ -242,14 +245,14 @@
 <a class="link" href="coaching.html">Coaching</a>
 <a class="link" href="programs.html">Programs</a>
 <a class="link" href="consulting.html">Consulting</a>
-<a class="link active" href="contact.html">Contact</a>
+<a class="link" href="contact.html">Contact</a>
 <a class="nav-book" href="contact.html#book">Book a call</a>
 </nav>
 <button class="menu-btn" aria-label="Open menu" aria-expanded="false">Menu</button>
 </div>
 </header>
-<section class="page-hero" id="book"><div class="wrap reveal"><span class="eyebrow">Contact</span><h1>Let us start with a free fit call.</h1><p>Tell me a little about where you are and what you are looking for. I read every message myself and reply within two business days.</p></div></section>
-<section class="sec"><div class="wrap contact-grid"><div class="reveal"><div class="form-success" id="form-success" hidden style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--pine);border-radius:14px;padding:1.4rem 1.5rem;margin-bottom:1.2rem;"><strong style="color:var(--feldgrau);">Message sent. Thank you.</strong><p style="color:var(--muted);font-size:0.96rem;margin-top:0.3rem;">I read every message myself and reply within two business days.</p></div><form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/contact.html?ok=1"><input type="hidden" name="form-name" value="contact"><p hidden style="display:none;"><label>Don’t fill this out: <input name="bot-field"></label></p><div class="field"><label for="c-name">Your name</label><input id="c-name" name="name" type="text" placeholder="First and last" required autocomplete="name"></div><div class="field"><label for="c-email">Email</label><input id="c-email" name="email" type="email" placeholder="you@email.com" required autocomplete="email"></div><div class="field"><label for="c-topic">What are you interested in?</label><input id="c-topic" name="topic" type="text" placeholder="Coaching, consulting, a program, or not sure yet"></div><div class="field"><label for="c-message">A little about where you are</label><textarea id="c-message" name="message" placeholder="A few sentences is plenty." required></textarea></div><button class="btn btn-coach" type="submit">Send message <span class="arrow">&rarr;</span></button></form></div><div class="reveal"><div class="cdetail"><h3>Book directly</h3><p>Prefer to grab a time now? Book a free fit call for coaching or consulting.</p><a class="btn btn-consult" href="booking.html" style="width:100%;justify-content:center;">Book a free call</a></div><div class="cdetail" style="margin-top:1.2rem;"><h3>Reach me</h3><p>Email: <a class="email" href="mailto:info@treeoflife-consulting.com">info@treeoflife-consulting.com</a><br>Working with clients remotely and in person in [ your service area ].<br>Replies within two business days.</p></div></div></div></section>
+<section class="page-hero" id="book"><div class="wrap reveal"><span class="eyebrow">Booking</span><h1>Book your free fit call.</h1><p>Pick a date and time in your timezone, tell me how to reach you and what you need. I receive everything converted to UTC and confirm your slot manually within two business days.</p></div></section>
+<section class="sec"><div class="wrap contact-grid"><div class="reveal"><div class="form-success" id="book-success" hidden style="background:#fff;border:1px solid var(--line);border-left:4px solid var(--pine);border-radius:14px;padding:1.4rem 1.5rem;margin-bottom:1.2rem;"><strong style="color:var(--feldgrau);">Request received. Thank you.</strong><p style="color:var(--muted);font-size:0.96rem;margin-top:0.3rem;">I confirm your slot manually within two business days. Your time is stored in UTC.</p></div><form name="booking" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/booking.html?booked=1" id="booking-form"><input type="hidden" name="form-name" value="booking"><p hidden style="display:none;"><label>Don’t fill this out: <input name="bot-field"></label></p><div class="field"><label for="b-name">Your name</label><input id="b-name" name="name" type="text" placeholder="First and last" required autocomplete="name"></div><div class="field"><label for="b-email">Email</label><input id="b-email" name="email" type="email" placeholder="you@email.com" required autocomplete="email"></div><div class="frow"><div class="field"><label for="b-prefix">Country code</label><select id="b-prefix" name="phone_prefix"><option value="+1" selected>+1 — USA / Canada</option><option value="+33">+33 — France</option><option value="+32">+32 — Belgium</option><option value="+41">+41 — Switzerland</option><option value="+44">+44 — UK</option><option value="+225">+225 — Côte d’Ivoire</option><option value="+221">+221 — Senegal</option><option value="+237">+237 — Cameroon</option><option value="+243">+243 — DR Congo</option><option value="+234">+234 — Nigeria</option><option value="+212">+212 — Morocco</option><option value="+91">+91 — India</option></select></div><div class="field"><label for="b-phone">Phone number</label><input id="b-phone" name="phone" type="tel" placeholder="6 00 00 00 00" required autocomplete="tel"></div></div><div class="frow"><div class="field"><label for="b-date">Preferred date</label><input id="b-date" name="date" type="date" required></div><div class="field"><label for="b-time">Preferred time (45 min)</label><select id="b-time" name="time" required><option value="09:00">09:00</option><option value="09:45">09:45</option><option value="10:30">10:30</option><option value="11:15">11:15</option><option value="13:00">13:00</option><option value="13:45">13:45</option><option value="14:30">14:30</option><option value="15:15">15:15</option><option value="16:00">16:00</option></select></div></div><div class="field"><label for="b-tz">Your timezone</label><select id="b-tz" name="timezone" required></select><p class="tz-note" id="tz-note"></p></div><div class="frow"><div class="field"><label for="b-country">Country</label><input id="b-country" name="country" type="text" placeholder="Country" required autocomplete="country"></div><div class="field"><label for="b-city">City</label><input id="b-city" name="city" type="text" placeholder="City" required autocomplete="address-level2"></div></div><div class="field"><label for="b-region">State / Region</label><input id="b-region" name="region" type="text" placeholder="State or region (optional)" autocomplete="address-level1"></div><div class="field"><label for="b-message">What do you need?</label><textarea id="b-message" name="message" placeholder="A few sentences about where you are and what you need." required></textarea></div><input type="hidden" id="b-utc" name="utc_datetime" value=""><button class="btn btn-coach" type="submit">Request this slot <span class="arrow">&rarr;</span></button></form></div><div class="reveal"><div class="cdetail"><h3>How it works</h3><p>Pick a date and time in your timezone. I receive everything converted to UTC and confirm your slot manually within two business days.</p></div><div class="cdetail" style="margin-top:1.2rem;"><h3>Prefer writing first?</h3><p>Not sure about a time yet? <a class="email" href="contact.html">Send a message</a> instead.</p></div></div></div></section>
 <section class="sec honey"><div class="narrow"><div class="sec-head center reveal"><span class="eyebrow">Good to know</span><h2>Questions people ask.</h2></div><div class="faq reveal"><details><summary>Is coaching the same as therapy?</summary><p>No. Coaching is forward-looking and works with you as someone already whole and capable. It is not treatment for a mental health condition. If something calls for a therapist, I will say so and help you find the right support.</p></details><details><summary>What happens on a free fit call?</summary><p>We spend about forty-five minutes talking through where you are and what you need. There is no pitch. If I am the right fit, we talk about next steps. If I am not, I will point you somewhere better.</p></details><details><summary>Do you work remotely?</summary><p>Yes. Coaching and much of the consulting work happen remotely, and I work in person where it makes sense.</p></details><details><summary>How long do engagements run?</summary><p>It depends on the work. Coaching ranges from a single session to a longer arc. Consulting can be a few hours, a scoped project, or an ongoing retainer. We settle on the shape together.</p></details><details><summary>What does it cost?</summary><p>Flat fees, shared with you upfront. No ranges and no surprises. You know what happens and what it costs before we begin.</p></details><details><summary>Do you work with individuals or organizations?</summary><p>Both. Individuals come for coaching and programs. Organizations come for consulting and team workshops. The through-line is the same.</p></details></div></div></section>
 <footer>
 <div class="wrap">
@@ -266,7 +269,43 @@
 var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target);}});},{threshold:0.12});
 document.querySelectorAll(".reveal").forEach(function(el){var sibs=Array.prototype.filter.call(el.parentElement.children,function(c){return c.classList.contains("reveal");});var i=sibs.indexOf(el);el.style.transitionDelay=Math.min(i,5)*90+"ms";io.observe(el);});
 var mb=document.querySelector(".menu-btn"),hd=document.querySelector("header.nav");if(mb){mb.addEventListener("click",function(){var o=hd.classList.toggle("open");mb.setAttribute("aria-expanded",o);mb.textContent=o?"Close":"Menu";});}
-(function(){try{var q=new URLSearchParams(window.location.search);if(q.get("ok")==="1"){var s=document.getElementById("form-success");if(s){s.hidden=false;s.scrollIntoView({behavior:"smooth",block:"center"});}}}catch(e){}})();
+(function(){try{var q=new URLSearchParams(window.location.search);if(q.get("booked")==="1"){var s=document.getElementById("book-success");if(s){s.hidden=false;s.scrollIntoView({behavior:"smooth",block:"center"});}}}catch(e){}})();
+(function(){
+  var tzSel=document.getElementById("b-tz"),tzNote=document.getElementById("tz-note"),
+      dateEl=document.getElementById("b-date"),timeEl=document.getElementById("b-time"),
+      utcEl=document.getElementById("b-utc"),form=document.getElementById("booking-form");
+  if(!tzSel||!form)return;
+  var zones=["UTC","America/New_York","America/Chicago","America/Denver","America/Los_Angeles","America/Anchorage","Pacific/Honolulu","America/Toronto","America/Sao_Paulo","Europe/London","Europe/Paris","Europe/Berlin","Africa/Abidjan","Africa/Lagos","Africa/Cairo","Africa/Nairobi","Asia/Dubai","Asia/Karachi","Asia/Kolkata","Asia/Bangkok","Asia/Singapore","Asia/Tokyo","Australia/Sydney","Pacific/Auckland"];
+  var detected="UTC";
+  try{detected=Intl.DateTimeFormat().resolvedOptions().timeZone||"UTC";}catch(e){}
+  if(zones.indexOf(detected)===-1){zones.unshift(detected);}
+  zones.forEach(function(z){var o=document.createElement("option");o.value=z;o.textContent=z.replace(/_/g," ");tzSel.appendChild(o);});
+  tzSel.value=detected;
+  if(tzNote){tzNote.textContent="Detected timezone: "+detected+". Change it if needed.";}
+  tzSel.addEventListener("change",function(){if(tzNote){tzNote.textContent="Selected timezone: "+tzSel.value+".";}});
+  try{var t=new Date();dateEl.min=t.getFullYear()+"-"+String(t.getMonth()+1).padStart(2,"0")+"-"+String(t.getDate()).padStart(2,"0");}catch(e){}
+  function tzOffsetMinutes(date,tz){
+    try{
+      var dtf=new Intl.DateTimeFormat("en-US",{timeZone:tz,hour12:false,year:"numeric",month:"2-digit",day:"2-digit",hour:"2-digit",minute:"2-digit",second:"2-digit"});
+      var p={};dtf.formatToParts(date).forEach(function(x){p[x.type]=x.value;});
+      var asUTC=Date.UTC(+p.year,+p.month-1,+p.day,(+p.hour)%24,+p.minute,+p.second);
+      return (asUTC-date.getTime())/60000;
+    }catch(e){return 0;}
+  }
+  function zonedToUtc(dateStr,timeStr,tz){
+    var d=dateStr.split("-"),t=timeStr.split(":");
+    var y=+d[0],m=+d[1],day=+d[2],h=+t[0],mi=+t[1];
+    var utc=Date.UTC(y,m-1,day,h,mi);
+    for(var i=0;i<2;i++){utc=Date.UTC(y,m-1,day,h,mi)-tzOffsetMinutes(new Date(utc),tz)*60000;}
+    return new Date(utc);
+  }
+  form.addEventListener("submit",function(){
+    try{
+      if(!dateEl.value||!timeEl.value)return;
+      utcEl.value=zonedToUtc(dateEl.value,timeEl.value,tzSel.value).toISOString();
+    }catch(e){}
+  });
+})();
 </script>
 </body>
 </html>
