@@ -17,6 +17,12 @@
   [headers.values]
     Cache-Control = "public, max-age=0, must-revalidate"
 
+# Versioned-by-content assets are cached aggressively
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Forms (contact, guide, booking) are plain static HTML with
 # data-netlify="true" — auto-detected at deploy, no extra config.
 # Success is handled in-page via ?ok=1 / ?guide=ok / ?booked=1.
